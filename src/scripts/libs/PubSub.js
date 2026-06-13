@@ -44,12 +44,12 @@ class PubSub {
     if (!this.subs[name])
       return;
 
-    var index = this.subs.indexOf(callback);
+    var index = this.subs[name].indexOf(callback);
 
     if (index === -1)
       return;
 
-    this.subs.splice(index, 1);
+    this.subs[name].splice(index, 1);
   }
 
   pub (name, message) {
